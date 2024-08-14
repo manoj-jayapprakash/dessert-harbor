@@ -1,4 +1,6 @@
-export const products = [
+import { TProduct } from "./models";
+
+export const products: TProduct[] = [
   {
     id: "product-1",
     image: "./assets/images/image-waffle-desktop.jpg",
