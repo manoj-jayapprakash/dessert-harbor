@@ -11,7 +11,10 @@ export default function Home() {
       {parsedProducts.length === 0 ? (
         <EmptyProduct />
       ) : (
-        <ProductList products={parsedProducts} />
+        <section className='space-y-4'>
+          <h2>Desserts</h2>
+          <ProductList products={parsedProducts} />
+        </section>
       )}
     </main>
   );

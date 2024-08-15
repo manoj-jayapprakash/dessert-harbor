@@ -2,7 +2,7 @@
 
 ### Product Listing Page
 
-- [ ] Display at least 6-10 products using a grid layout.
+- [x] Display at least 6-10 products using a grid layout.
 - [ ] Each product card should include:
   - [ ] Product image
   - [ ] Product name
