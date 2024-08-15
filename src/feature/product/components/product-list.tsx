@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { AddToCartButton } from "./add-to-cart-button";
 
 export const ProductList = ({ products }: { products: TProduct[] }) => {
@@ -31,7 +31,7 @@ export const ProductList = ({ products }: { products: TProduct[] }) => {
               <p className='m-0'>{product.price}</p>
             </CardHeader>
             <CardFooter className='p-0'>
-              <AddToCartButton />
+              <AddToCartButton product={product} />
             </CardFooter>
           </Card>
         </li>

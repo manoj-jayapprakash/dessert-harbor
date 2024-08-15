@@ -11,3 +11,5 @@ export const ProductSchema = z.object({
 export const ProductListSchema = z.array(ProductSchema);
 
 export type TProduct = z.infer<typeof ProductSchema>;
+
+export type TProductInCart = TProduct & { quantity: number };

@@ -1,5 +1,5 @@
-import { EmptyProduct } from "@/components/products/empty-product";
-import { ProductList } from "@/components/products/product-list";
+import { EmptyProduct } from "@/feature/product/components/empty-product";
+import { ProductList } from "@/feature/product/components/product-list";
 import { ProductListSchema } from "@/lib/models";
 import { products } from "@/lib/constants";
 
