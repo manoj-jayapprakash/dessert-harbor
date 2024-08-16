@@ -12,6 +12,7 @@ export const CartList = () => {
 
   return (
     <section className='md:col-span-2'>
+      <h3 className='text-lg mb-4'>Desserts</h3>
       <ul className='space-y-4'>
         {producstArr.map((product) => (
           <li
@@ -27,8 +28,10 @@ export const CartList = () => {
             />
             <div className='flex flex-col md:flex-row gap-4 self-start  justify-between h-full'>
               <div>
-                <h3>{product.name}</h3>
-                <p className='text-sm mt-2'>Price: {product.price}</p>
+                <h4 className='font-medium'>{product.name}</h4>
+                <p className='text-sm mt-2 text-orange-600'>
+                  Price: {product.price}
+                </p>
               </div>
               <div className='flex items-center justify-between'>
                 <QuantityButton productId={product.id} className='w-1/2' />

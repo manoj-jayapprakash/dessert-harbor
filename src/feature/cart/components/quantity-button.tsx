@@ -17,12 +17,12 @@ export const QuantityButton = ({
   const quantity = currentProduct?.quantity ?? 1;
 
   return (
-    <div className={cn("h-10 border rounded-lg flex items-center", className)}>
+    <div className={cn("border rounded-lg flex items-center", className)}>
       <Input
         type='number'
         value={quantity}
         onChange={(e) => updateQuantity(productId, +e.target.value)}
-        className='text-center  border-0 bg-transparent ring-offset-ring'
+        className='text-center bg-gray-100 ring-offset-ring'
       />
     </div>
   );

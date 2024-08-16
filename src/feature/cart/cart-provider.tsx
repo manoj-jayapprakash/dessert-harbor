@@ -10,6 +10,7 @@ type TCartContext = {
   removeProductFromCart: (product: TProduct) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   totalProductsInCart: number;
+  resetCart: () => void;
 };
 
 const CartContext = createContext<TCartContext | null>(null);
@@ -63,6 +64,10 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     });
   };
 
+  const resetCart = () => {
+    setProductsInCart(new Map());
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -71,6 +76,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         removeProductFromCart,
         updateQuantity,
         totalProductsInCart,
+        resetCart,
       }}
     >
       {children}

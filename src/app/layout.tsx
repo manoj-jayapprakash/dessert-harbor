@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={cn(inter.className, "antialiased")}>
         <CartProvider>
           <Navbar />
-          <div className='max-w-5xl mx-auto p-4'>{children}</div>
+          <div className='max-w-5xl mx-auto px-4'>{children}</div>
         </CartProvider>
       </body>
     </html>

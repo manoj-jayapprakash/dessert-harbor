@@ -7,7 +7,7 @@ export default function Home() {
   const parsedProducts = ProductListSchema.parse(products);
 
   return (
-    <main className=''>
+    <main className='py-4'>
       {parsedProducts.length === 0 ? (
         <EmptyProduct />
       ) : (
