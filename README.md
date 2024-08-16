@@ -4,16 +4,16 @@
 
 - [x] Display at least 6-10 products using a grid layout.
 - [ ] Each product card should include:
-  - [ ] Product image
-  - [ ] Product name
+  - [x] Product image
+  - [x] Product name
   - [ ] Product price (formatted for currency)
-  - [ ] "Add to Cart" button
+  - [x] "Add to Cart" button
 
 ### Add to Cart Functionality
 
 - [ ] Clicking the "Add to Cart" button on a product should:
-  - [ ] Add the chosen product to a user's virtual shopping cart.
-  - [ ] Update the cart icon or a dedicated counter to reflect the number of added items (optional).
+  - [x] Add the chosen product to a user's virtual shopping cart.
+  - [x] Update the cart icon or a dedicated counter to reflect the number of added items (optional).
   - [ ] Provide visual feedback (e.g., animation) confirming the item's addition.
 
 ### Cart Page

@@ -2,20 +2,23 @@
 
 import { TProduct, TProductInCart } from "@/lib/models";
 import React, { createContext, useContext, useState } from "react";
+import { getProductsCountInCart } from "./helpers";
 
 type TCartContext = {
-  productsInCart: Map<string, TProductInCart>;
+  productsInCart: TProductInCart;
   addProductToCart: (product: TProduct) => void;
   removeProductFromCart: (product: TProduct) => void;
   updateQuantity: (productId: string, quantity: number) => void;
+  totalProductsInCart: number;
 };
 
 const CartContext = createContext<TCartContext | null>(null);
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
-  const [productsInCart, setProductsInCart] = useState<
-    Map<string, TProductInCart>
-  >(new Map());
+  const [productsInCart, setProductsInCart] = useState<TProductInCart>(
+    new Map()
+  );
+  const totalProductsInCart = getProductsCountInCart(productsInCart);
 
   const addProductToCart = (product: TProduct) => {
     setProductsInCart((prev) => {
@@ -27,7 +30,11 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
           quantity: existingProduct.quantity + 1,
         });
       } else {
-        newProductMap.set(product.id, { ...product, quantity: 1 });
+        newProductMap.set(product.id, {
+          ...product,
+          quantity: 1,
+          totalPrice: product.price,
+        });
       }
       return newProductMap;
     });
@@ -47,7 +54,11 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     setProductsInCart((prev) => {
       const newProductMap = new Map(prev);
       const existingProduct = newProductMap.get(productId)!;
-      newProductMap.set(existingProduct.id, { ...existingProduct, quantity });
+      newProductMap.set(existingProduct.id, {
+        ...existingProduct,
+        quantity,
+        totalPrice: quantity * existingProduct.price,
+      });
       return newProductMap;
     });
   };
@@ -59,6 +70,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         addProductToCart,
         removeProductFromCart,
         updateQuantity,
+        totalProductsInCart,
       }}
     >
       {children}

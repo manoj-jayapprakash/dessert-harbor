@@ -12,4 +12,7 @@ export const ProductListSchema = z.array(ProductSchema);
 
 export type TProduct = z.infer<typeof ProductSchema>;
 
-export type TProductInCart = TProduct & { quantity: number };
+export type TProductInCart = Map<
+  string,
+  TProduct & { quantity: number; totalPrice: number }
+>;
