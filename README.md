@@ -18,16 +18,16 @@
 
 ### Cart Page
 
-- [ ] Display a dedicated cart page where users can manage their selected products.
-- [ ] The cart page should include:
-  - [ ] A list of all added products, displaying:
-    - [ ] Product image
-    - [ ] Product name
-    - [ ] Product price
-    - [ ] Quantity selector (up/down buttons or input field) to adjust the amount of each item.
-    - [ ] "Remove Item" button to delete a specific product from the cart.
-  - [ ] Cart summary section:
-    - [ ] Subtotal: Calculate the total cost of all items in the cart based on their quantity and price.
-    - [ ] Discounts (optional): Implement the ability to apply discounts on the total price (fixed or percentage).
-    - [ ] Total price (including discounts): Display the final price the user needs to pay.
-    - [ ] Checkout button (optional): Redirect to a simulated checkout page or provide a success message.
+- [x] Display a dedicated cart page where users can manage their selected products.
+- [x] The cart page should include:
+  - [x] A list of all added products, displaying:
+    - [x] Product image
+    - [x] Product name
+    - [x] Product price
+    - [x] Quantity selector (up/down buttons or input field) to adjust the amount of each item.
+    - [x] "Remove Item" button to delete a specific product from the cart.
+  - [x] Cart summary section:
+    - [x] Subtotal: Calculate the total cost of all items in the cart based on their quantity and price.
+    - [x] Discounts (optional): Implement the ability to apply discounts on the total price (fixed or percentage).
+    - [x] Total price (including discounts): Display the final price the user needs to pay.
+    - [x] Checkout button (optional): Redirect to a simulated checkout page or provide a success message.

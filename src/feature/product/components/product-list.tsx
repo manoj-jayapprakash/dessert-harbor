@@ -9,8 +9,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { AddToCartButton } from "./add-to-cart-button";
+import { IndianRupee } from "lucide-react";
 
 export const ProductList = ({ products }: { products: TProduct[] }) => {
   return (
@@ -27,8 +27,13 @@ export const ProductList = ({ products }: { products: TProduct[] }) => {
             />
             <p className=''>{product.category}</p>
             <CardHeader className='items-center justify-between p-0'>
-              <CardTitle>{product.name}</CardTitle>
-              <p className='m-0'>{product.price}</p>
+              <CardTitle className='w-3/4 text-balance'>
+                {product.name}
+              </CardTitle>
+              <p className='m-0 flex items-center'>
+                <IndianRupee size={12} />
+                {product.price}
+              </p>
             </CardHeader>
             <CardFooter className='p-0'>
               <AddToCartButton product={product} />

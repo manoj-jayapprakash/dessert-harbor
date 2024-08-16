@@ -24,7 +24,10 @@ export const AddToCartButton = ({ product }: { product: TProduct }) => {
       {productsInCart.has(product.id) ? (
         <div className='flex items-center gap-1'>
           <QuantityButton productId={product.id} />
-          <Trash2 onClick={removeFromCartHandler} />
+          <Trash2
+            onClick={removeFromCartHandler}
+            className='text-destructive'
+          />
         </div>
       ) : (
         <Button className='w-full' onClick={addToCartHandler}>
