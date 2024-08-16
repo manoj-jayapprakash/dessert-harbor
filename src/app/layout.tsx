@@ -4,7 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { cn } from "@/lib/utils";
 import { CartProvider } from "@/feature/cart/cart-provider";
-
+import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,6 +23,7 @@ export default function RootLayout({
         <CartProvider>
           <Navbar />
           <div className='max-w-5xl mx-auto px-4'>{children}</div>
+          <Toaster />
         </CartProvider>
       </body>
     </html>

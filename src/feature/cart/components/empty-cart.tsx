@@ -2,6 +2,13 @@ import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import {
+  InfoContent,
+  InfoDescription,
+  InfoDisplay,
+  InfoTitle,
+} from "@/components/info-display";
+import { STATIC_CONTENT } from "@/lib/constants";
 
 export const EmptyCart = () => {
   return (
@@ -13,13 +20,17 @@ export const EmptyCart = () => {
         height={300}
         className='mx-auto'
       />
-      <h2 className='text-lg font-semibold'>Your Dessert Plate is Empty!</h2>
-      <p>
-        Time to fill it up with some yummy desserts! What are you craving today?
-      </p>
-      <Link href={"/"} className={buttonVariants({ variant: "default" })}>
-        View Desserts
-      </Link>
+      <InfoDisplay>
+        <InfoTitle>{STATIC_CONTENT.EMPTY_CART.TITLE}</InfoTitle>
+        <InfoDescription>
+          {STATIC_CONTENT.EMPTY_CART.DESCRIPTION}
+        </InfoDescription>
+        <InfoContent>
+          <Link href={"/"} className={buttonVariants({ variant: "default" })}>
+            {STATIC_CONTENT.EMPTY_CART.CTA}
+          </Link>
+        </InfoContent>
+      </InfoDisplay>
     </section>
   );
 };

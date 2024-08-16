@@ -23,13 +23,14 @@ export const QuantityButton = ({
   };
 
   return (
-    <div className={cn("border rounded-lg flex items-center", className)}>
-      <Input
-        type='number'
-        value={quantity}
-        onChange={quantityHandler}
-        className='text-center bg-gray-100 ring-offset-ring'
-      />
-    </div>
+    <Input
+      type='number'
+      value={quantity}
+      onChange={quantityHandler}
+      className={cn(
+        "border rounded-lg flex text-center items-center",
+        className
+      )}
+    />
   );
 };

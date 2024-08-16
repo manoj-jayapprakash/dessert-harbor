@@ -6,8 +6,7 @@ import { getTotalPrice } from "../helpers";
 import { Separator } from "@/components/ui/separator";
 import { Toggle } from "@/components/ui/toggle";
 import { Checkout } from "./checkout";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
+import { formatCurrency } from "@/lib/utils";
 
 export const CartSummary = ({ products }: { products: TProductInCart }) => {
   const [basePrice, setBasePrice] = useState(getTotalPrice(products));
@@ -33,7 +32,7 @@ export const CartSummary = ({ products }: { products: TProductInCart }) => {
       <div className='border p-4 rounded-lg grid gap-4'>
         <p className='flex justify-between font-medium'>
           Total
-          <strong className='text-base'>{totalPrice}</strong>
+          <strong className='text-base'>{formatCurrency(totalPrice)}</strong>
         </p>
         <Separator />
         <div>
@@ -46,6 +45,7 @@ export const CartSummary = ({ products }: { products: TProductInCart }) => {
               onClick={() => setIsDiscountActivated(!isDiscountActivated)}
               disabled={totalPrice < 1000}
               aria-label='Toggle Discount Activate'
+              className='p-0'
             >
               Activate 10%
             </Toggle>
@@ -53,7 +53,8 @@ export const CartSummary = ({ products }: { products: TProductInCart }) => {
         </div>
         <Separator />
         <p className='flex justify-between font-medium'>
-          Grand Total <strong className='text-base'>{totalPrice}</strong>
+          Grand Total{" "}
+          <strong className='text-base'>{formatCurrency(totalPrice)}</strong>
         </p>
       </div>
       <Checkout className={"w-full my-4"} />

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { QuantityButton } from "./quantity-button";
 import { Button } from "@/components/ui/button";
 import { Trash2 } from "lucide-react";
+import { formatCurrency } from "@/lib/utils";
 
 export const CartList = () => {
   const { productsInCart, removeProductFromCart, updateQuantity } =
@@ -29,8 +30,8 @@ export const CartList = () => {
             <div className='flex flex-col md:flex-row gap-4 self-start  justify-between h-full'>
               <div>
                 <h4 className='font-medium'>{product.name}</h4>
-                <p className='text-sm mt-2 text-orange-600'>
-                  Price: {product.price}
+                <p className='text-sm mt-2'>
+                  Price: {formatCurrency(product.price)}
                 </p>
               </div>
               <div className='flex items-center justify-between'>
@@ -38,7 +39,7 @@ export const CartList = () => {
                 <p className='text-sm'>
                   Total:{" "}
                   <strong className='text-base'>
-                    {product.quantity * product.price}
+                    {formatCurrency(product.quantity * product.price)}
                   </strong>
                 </p>
               </div>

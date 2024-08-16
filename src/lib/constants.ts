@@ -65,3 +65,28 @@ export const products: TProduct[] = [
     price: 175,
   },
 ];
+
+export const STATIC_CONTENT = {
+  ERROR: {
+    TITLE: "Uh-Oh! Our Dessert Machine Got a Sugar Rush",
+    DESCRIPTION: "Something went wrong, but don't worry! Let's try that again.",
+    CTA: "Try Again",
+  },
+  NOT_FOUND: {
+    TITLE: "Whoops! This Dessert Took a Detour",
+    DESCRIPTION:
+      "The treat you're looking for isn't here. Let's find you something even yummier!",
+    CTA: "Return Home",
+  },
+  EMPTY_CART: {
+    TITLE: "Your Dessert Plate is Empty!",
+    DESCRIPTION:
+      "Time to fill it up with some yummy desserts! What are you craving today?",
+    CTA: "View Desserts",
+  },
+  EMPTY_PRODUCT: {
+    TITLE: "Oops! We're All Out of Sweets",
+    DESCRIPTION:
+      "Our desserts were so delicious, they've all been gobbled up. We're restocking with fresh goodies soon!",
+  },
+};

@@ -1,7 +1,13 @@
 import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-
+import {
+  InfoContent,
+  InfoDescription,
+  InfoDisplay,
+  InfoTitle,
+} from "@/components/info-display";
+import { STATIC_CONTENT } from "@/lib/constants";
 export default function NotFound() {
   return (
     <section className='space-y-4 text-balance text-center my-8'>
@@ -12,16 +18,17 @@ export default function NotFound() {
         height={300}
         className='mx-auto'
       />
-      <h2 className='text-lg font-semibold'>
-        Whoops! This Dessert Took a Detour
-      </h2>
-      <p>
-        The treat you&apos;re looking for isn&apos;t here. Let&apos;s find you
-        something even yummier!
-      </p>
-      <Link href={"/"} className={buttonVariants({ variant: "default" })}>
-        Return Home
-      </Link>
+      <InfoDisplay>
+        <InfoTitle>{STATIC_CONTENT.NOT_FOUND.TITLE}</InfoTitle>
+        <InfoDescription>
+          {STATIC_CONTENT.NOT_FOUND.DESCRIPTION}
+        </InfoDescription>
+        <InfoContent>
+          <Link href={"/"} className={buttonVariants({ variant: "default" })}>
+            {STATIC_CONTENT.NOT_FOUND.CTA}
+          </Link>
+        </InfoContent>
+      </InfoDisplay>
     </section>
   );
 }

@@ -6,16 +6,19 @@ import { products } from "@/lib/constants";
 export default function Home() {
   const parsedProducts = ProductListSchema.parse(products);
 
+  if (parsedProducts.length === 0)
+    return (
+      <main>
+        <EmptyProduct />
+      </main>
+    );
+
   return (
     <main className='py-4'>
-      {parsedProducts.length === 0 ? (
-        <EmptyProduct />
-      ) : (
-        <section className='space-y-4'>
-          <h2>Desserts</h2>
-          <ProductList products={parsedProducts} />
-        </section>
-      )}
+      <section className='space-y-4'>
+        <h2 className='font-bold text-2xl'>Desserts</h2>
+        <ProductList products={parsedProducts} />
+      </section>
     </main>
   );
 }

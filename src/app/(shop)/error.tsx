@@ -1,5 +1,12 @@
 "use client";
+import {
+  InfoContent,
+  InfoDescription,
+  InfoDisplay,
+  InfoTitle,
+} from "@/components/info-display";
 import { Button } from "@/components/ui/button";
+import { STATIC_CONTENT } from "@/lib/constants";
 import Image from "next/image";
 
 export default function Error({
@@ -16,15 +23,15 @@ export default function Error({
         alt='coffee machine'
         width={300}
         height={300}
-        className='mx-auto'
+        className='mx-auto my-8'
       />
-      <h2 className='text-lg font-semibold'>
-        Uh-Oh! Our Dessert Machine Got a Sugar Rush
-      </h2>
-      <p>
-        Something went wrong, but don&apos;t worry! Let&apos;s try that again.
-      </p>
-      <Button onClick={reset}>Try Again</Button>
+      <InfoDisplay>
+        <InfoTitle>{STATIC_CONTENT.ERROR.TITLE}</InfoTitle>
+        <InfoDescription>{STATIC_CONTENT.ERROR.DESCRIPTION}</InfoDescription>
+        <InfoContent>
+          <Button onClick={reset}>{STATIC_CONTENT.ERROR.CTA}</Button>
+        </InfoContent>
+      </InfoDisplay>
     </section>
   );
 }

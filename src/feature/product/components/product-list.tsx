@@ -11,13 +11,14 @@ import {
 } from "@/components/ui/card";
 import { AddToCartButton } from "./add-to-cart-button";
 import { IndianRupee } from "lucide-react";
+import { formatCurrency } from "@/lib/utils";
 
 export const ProductList = ({ products }: { products: TProduct[] }) => {
   return (
     <ul className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
       {products.map((product) => (
-        <li key={product.id} className='w-80  mx-auto'>
-          <Card className='p-4 grid gap-4'>
+        <li key={product.id} className='w-80 h-[28rem] mx-auto'>
+          <Card className='p-4 flex flex-col justify-between h-full'>
             <Image
               src={product.image}
               alt={product.name}
@@ -25,15 +26,17 @@ export const ProductList = ({ products }: { products: TProduct[] }) => {
               height={300}
               className='rounded-lg'
             />
-            <p className=''>{product.category}</p>
-            <CardHeader className='items-center justify-between p-0'>
-              <CardTitle className='w-3/4 text-balance'>
-                {product.name}
-              </CardTitle>
-              <p className='m-0 flex items-center'>
-                <IndianRupee size={12} />
-                {product.price}
-              </p>
+            <CardHeader className='grid p-0'>
+              <p className='mb-2'>{product.category}</p>
+              <div className='flex justify-between'>
+                <CardTitle className='w-3/4 text-balance'>
+                  {product.name}
+                </CardTitle>
+                <p className='m-0 flex items-center'>
+                  <IndianRupee size={12} />
+                  {formatCurrency(product.price)}
+                </p>
+              </div>
             </CardHeader>
             <CardFooter className='p-0'>
               <AddToCartButton product={product} />
