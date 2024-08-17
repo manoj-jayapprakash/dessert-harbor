@@ -8,7 +8,13 @@ import { Toggle } from "@/components/ui/toggle";
 import { Checkout } from "./checkout";
 import { formatCurrency } from "@/lib/utils";
 
-export const CartSummary = ({ products }: { products: TProductInCart }) => {
+export const CartSummary = ({
+  products,
+  totalProducts,
+}: {
+  products: TProductInCart;
+  totalProducts: number;
+}) => {
   const [basePrice, setBasePrice] = useState(getTotalPrice(products));
   const [isDiscountActivated, setIsDiscountActivated] = useState(false);
 
@@ -43,7 +49,7 @@ export const CartSummary = ({ products }: { products: TProductInCart }) => {
             </p>
             <Toggle
               onClick={() => setIsDiscountActivated(!isDiscountActivated)}
-              disabled={totalPrice < 1000}
+              disabled={totalPrice <= 1000}
               aria-label='Toggle Discount Activate'
               className='p-0 border'
             >
@@ -57,7 +63,7 @@ export const CartSummary = ({ products }: { products: TProductInCart }) => {
           <strong className='text-base'>{formatCurrency(totalPrice)}</strong>
         </p>
       </div>
-      <Checkout className={"w-full my-4"} />
+      {totalProducts > 0 && <Checkout className={"w-full my-4"} />}
     </section>
   );
 };

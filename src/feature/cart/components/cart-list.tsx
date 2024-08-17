@@ -18,7 +18,7 @@ export const CartList = () => {
         {producstArr.map((product) => (
           <li
             key={product.id}
-            className='relative border p-4 rounded-lg flex gap-4 items-center'
+            className='border p-4 flex gap-4 items-center rounded-lg'
           >
             <Image
               src={product.image}
@@ -29,7 +29,7 @@ export const CartList = () => {
             />
             <div className='flex flex-col md:flex-row gap-4 justify-between'>
               <div>
-                <h4 className='font-medium'>{product.name}</h4>
+                <h4 className='font-medium text-balance'>{product.name}</h4>
                 <p className='text-sm mt-2'>
                   Price: {formatCurrency(product.price)}
                 </p>
@@ -46,7 +46,7 @@ export const CartList = () => {
             </div>
             <Button
               variant={"ghost"}
-              className='absolute top-1 right-1 p-1'
+              className='p-1 self-start'
               onClick={() => removeProductFromCart(product)}
             >
               <Trash2 className='text-destructive' size={14} />

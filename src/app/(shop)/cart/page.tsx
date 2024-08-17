@@ -9,7 +9,7 @@ import React from "react";
 export default function Cart() {
   const { totalProductsInCart, productsInCart } = useCartContext();
 
-  if (!totalProductsInCart)
+  if (productsInCart.size === 0)
     return (
       <main>
         <EmptyCart />
@@ -24,7 +24,10 @@ export default function Cart() {
       </header>
       <div className='grid md:grid-cols-3 gap-4'>
         <CartList />
-        <CartSummary products={productsInCart} />
+        <CartSummary
+          totalProducts={totalProductsInCart}
+          products={productsInCart}
+        />
       </div>
     </main>
   );

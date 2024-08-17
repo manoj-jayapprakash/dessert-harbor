@@ -1,4 +1,6 @@
-## To-Do List: Dessert Harbor Website
+## Dessert Harbor Website
+
+A shopping website for desserts built using nextjs.
 
 ### Product Listing Page
 
