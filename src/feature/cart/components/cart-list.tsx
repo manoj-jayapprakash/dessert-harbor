@@ -12,7 +12,7 @@ export const CartList = () => {
   const producstArr = Array.from(productsInCart.values());
 
   return (
-    <section className='md:col-span-2'>
+    <section className='md:col-span-2 md:mb-16'>
       <h3 className='text-lg mb-4'>Desserts</h3>
       <ul className='space-y-4'>
         {producstArr.map((product) => (
@@ -27,7 +27,7 @@ export const CartList = () => {
               height={120}
               className='rounded-lg'
             />
-            <div className='flex flex-col md:flex-row gap-4 self-start  justify-between h-full'>
+            <div className='flex flex-col md:flex-row gap-4 justify-between'>
               <div>
                 <h4 className='font-medium'>{product.name}</h4>
                 <p className='text-sm mt-2'>

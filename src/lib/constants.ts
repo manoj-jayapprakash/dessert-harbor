@@ -89,4 +89,10 @@ export const STATIC_CONTENT = {
     DESCRIPTION:
       "Our desserts were so delicious, they've all been gobbled up. We're restocking with fresh goodies soon!",
   },
+  ORDER_CONFIRMATION: {
+    TITLE: "Sweet Success! Your Order is Confirmed",
+    DESCRIPTION:
+      "Your order is locked in! Our bakers are working their magic. We'll let you know when your treats are ready to delight you.",
+    CTA: "Return Home",
+  },
 };

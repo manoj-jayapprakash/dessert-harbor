@@ -14,7 +14,7 @@ export default function Home() {
     );
 
   return (
-    <main className='py-4'>
+    <main className='py-4 mb-16'>
       <section className='space-y-4'>
         <h2 className='font-bold text-2xl'>Desserts</h2>
         <ProductList products={parsedProducts} />

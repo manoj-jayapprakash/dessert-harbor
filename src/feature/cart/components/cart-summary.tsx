@@ -27,7 +27,7 @@ export const CartSummary = ({ products }: { products: TProductInCart }) => {
   }, [products]);
 
   return (
-    <section>
+    <section className='mb-16 md:mb-0 md:sticky h-fit top-32'>
       <h3 className='text-lg mb-4'>Summary</h3>
       <div className='border p-4 rounded-lg grid gap-4'>
         <p className='flex justify-between font-medium'>
@@ -45,7 +45,7 @@ export const CartSummary = ({ products }: { products: TProductInCart }) => {
               onClick={() => setIsDiscountActivated(!isDiscountActivated)}
               disabled={totalPrice < 1000}
               aria-label='Toggle Discount Activate'
-              className='p-0'
+              className='p-0 border'
             >
               Activate 10%
             </Toggle>
